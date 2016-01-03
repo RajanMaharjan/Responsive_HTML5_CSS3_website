@@ -1,0 +1,88 @@
+<!--
+This HTML5 website is part of a HTML5 / CSS3 tutorial done during my learning with JS
+Feel free to use it for your personal or commercial projects and/or change it in any way you like.
+
+USE THIS TEMPLATE ON YOUR OWN RISK AND PLEASE BE AWARE THAT I DO NOT GUARANTEE THE CORRECTNESS OF THE FILES
+AND WILL NOT BE RESPONSIBLE FOR ANY LOSS OR DAMAGE CAUSED THROUGH THE USE OF THESE FILES.
+
+I would be happy if you put a link to http://www.mrajan.com.np somewhere on your website to support my work. However this is not obligatory.
+
+What you need to do to make this page work:
+
+- Find images for the jQuery Slider and for all the icons (the icons used in the tutorial are from http://www.iconarchive.com/show/icons8-metro-style-icons-by-visualpharm.1.html)
+
+To minimize the amount of HTTP requests combine all CSS files into one single file.
+
+!-->
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset='UTF-8'>
+	<!--
+	Create a responsive design which should work on all kind of devices and screen resolutions we need to add the viewport meta tag which defines how the website should be displayed on a device. !-->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<title>My Experience Learning with JS</title>
+	<!--
+	Resetting the styling of all HTML elements so that we can start to build our own styling from scratch without having to worry about cross-browser differences.!-->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+	<!--Contains all other styling.	!-->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	<!--
+	Click on one of the small images in the main content section you will see that a larger version of the image will show up on top of the page
+	!-->
+	<link rel="stylesheet" href="lightbox/css/lightbox.css"  />
+	<!--
+	Stylesheet (Google WebFonts) will let us use the fonts Open Sans and Baumans!-->
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans|Baumans' type='text/css'>
+	<!--
+	Using HTML5 and CSS3 features we need several scripts to make the features visible in all browsers. So modernizr is feature detection library for HTML5 and CSS3!.
+	Note: while downloading “html5shiv” and “Modernizr.load” should be included.-->
+	<script src="js/vendor/modernizr.min.js"></script>
+	<!--
+	A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.!-->
+	<script src="js/vendor/respond.min.js"></script>
+
+	<!-- include extern jQuery file but fall back to local file if extern one fails to load !-->
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js\/vendor\/1.7.2.jquery.min.js"><\/script>')</script>
+        
+        <script src="lightbox/js/lightbox.js"></script>
+        <!--Using CSS3 features which require the use of different prefixes to work in all browsers. !-->
+        <script src="js/vendor/prefixfree.min.js"></script>
+        <!--The responsive Image Slider SlideJS.!-->
+        <script src="js/vendor/jquery.slides.min.js"></script>
+        <script src="js/script.js"></script>
+
+</head>
+<body>
+		<!--This is website header! The header will include our navigation and our logo. Inside the header we put the main heading h1 and a paragraph-->
+		<header>
+           <!--  <div class="toggleMobile">
+                <span class="menu1"></span>
+                <span class="menu2"></span>
+                <span class="menu3"></span>
+            </div>
+            <div id="mobileMenu">
+                <ul>
+                    <li><a href="javascript:void(0)">Home</a></li>
+                    <li><a href="javascript:void(0)">Porfolio</a></li>
+                    <li><a href="javascript:void(0)">About</a></li>
+                </ul>
+            </div>  -->
+            <!--Inside the header we put the main heading h1 and a paragraph-->
+            <h1>My Website</h1>
+            <p>A responsive website</p>           
+            <!--The header will include our navigation and our logo. Inside the header we put the main heading h1 and a paragraph-->
+            <nav>
+            	<!-- <h2 class="hidden">Our navigation</h2> -->
+                <ul>
+                    <li><a href="javascript:void(0)">Home</a></li>
+                    <li><a href="javascript:void(0)">Porfolio</a></li>
+                    <li><a href="javascript:void(0)">About</a></li>
+                    <li><a href="javascript:void(0)">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+       
+</body>
+</html>
