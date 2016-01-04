@@ -20,7 +20,9 @@ To minimize the amount of HTTP requests combine all CSS files into one single fi
 	<meta charset='UTF-8'>
 	<!--
 	Create a responsive design which should work on all kind of devices and screen resolutions we need to add the viewport meta tag which defines how the website should be displayed on a device. !-->
+    <!-- SlidesJS Required (if responsive): Sets the page width to the device width. -->
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <!-- End SlidesJS Required -->
 	<title>My Experience Learning with JS</title>
 	<!--
 	Resetting the styling of all HTML elements so that we can start to build our own styling from scratch without having to worry about cross-browser differences.!-->
@@ -53,6 +55,38 @@ To minimize the amount of HTTP requests combine all CSS files into one single fi
         <script src="js/vendor/jquery.slides.min.js"></script>
         <script src="js/script.js"></script>
 
+        <!-- This is jquery script to render the slides and slider contents -->
+        <script>
+            $(function() {
+              $('#slides').slidesjs({   
+                height: 235,
+                navigation: false,
+                pagination: false,
+                effect: {
+                  fade: {
+                    speed: 400
+                  }
+                },
+                callback: {
+                    start: function(number)
+                    {           
+                        $("#slider_content1,#slider_content2,#slider_content3").fadeOut(500);
+                    },
+                    complete: function(number)
+                    {           
+                        $("#slider_content" + number).delay(500).fadeIn(1000);
+                    }       
+                },
+                play: {
+                    active: false,
+                    auto: true,
+                    interval: 6000,
+                    pauseOnHover: false
+                }
+              });
+            });
+        </script>
+
 </head>
 <body>
 		<!--This is website header! The header will include our navigation and our logo. Inside the header we put the main heading h1 and a paragraph-->
@@ -83,6 +117,135 @@ To minimize the amount of HTTP requests combine all CSS files into one single fi
                 </ul>
             </nav>
         </header>
-       
+
+        <!-- This is website Slider images! -->
+       <section class="container">
+            <h2 class="hidden">This is slider content...</h2>
+                <article id="slider_content1">
+                    <h3>My Personal Blog</h3>
+                    <p>As sharing is learnging, I'm doing little bit of it for this responsive HTML5 & CSS3 website...</p>
+                    <a class="button" href="some_page.html">Learn more...</a></article>
+                <article id="slider_content2">
+                    <h3>My working space</h3>
+                    <p>This is my toolkit to do all those amazing stuff you see right here...</p>
+                    <a class="button" href="some_page.html">Mehr lesen</a></article>
+                <article id="slider_content3">
+                    <h3>Doing thing in Homestation</h3>
+                    <p>This is my office sace to work on all the projects</p>
+                    <a class="button" href="some_page.html">Mehr lesen</a></article>
+            <div id="slides">
+                <img src="img/workstation.jpg" alt="Some alt text">
+                <img src="img/keyboard.jpg" alt="Some alt text">        
+                <img src="img/homestation.jpg" alt="Some alt text">
+            </div>
+        </section>
+
+        <!-- This is website spacer with the search input.. -->
+        <section id="spacer">  
+            <h2 class="hidden">This spacer content...</h2>          
+            <p>What do you prefer to know more ? Enter right here ...</p>
+            <div class="search">
+                <form action="#">
+                    <input type="text" name="sitesearch" value="Enter a word..."/>
+                    <input type="submit" name="start_search" class="button" value="Search"/>
+                </form>
+            </div>            
+        </section>
+
+        <!-- This is website part for different articles with icons -->
+        <section id="boxcontent">
+            <h2 class="hidden">How things work</h2>
+            <article>                              
+                <img src="img/Elegantthemes-Beautiful-Flat-Browser.ico" alt="Some alt text"/>                
+                <h3>How to do the stuffs..</h3>
+                <p>         
+                    In this website you will find the necessary HTML5 & CSS3....
+                </p>
+            </article>
+            <article>                    
+                <img src="img/Elegantthemes-Beautiful-Flat-Computer.ico" alt="Some alt text"/>                 
+                <h3>Hybrid applications</h3>
+                <p>         
+                    You can develope your own hypbrid application....
+                </p>
+            </article>
+            <article>                   
+                <img src="img/Elegantthemes-Beautiful-Flat-Brush-pencil.ico" alt="Some alt text"/>             
+                <h3>Settings...</h3>
+                <p>         
+                    Editing you content in the website ...
+                </p>
+            </article>
+            <br class="clear"/>
+        </section>
+
+
+        <section id="four_columns">
+            <h2>
+                My recent works...
+            </h2>    
+            <article class="img-item">
+                <h3 class="hidden">office</h3>
+                <figure>  
+                    <a href="img/office-large.jpg" rel="lightbox" title="Photo by: Missy S">
+                        <span class="thumb-screen"></span>
+                        <img src="img/office-small.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/"/>
+                    </a>
+                    <figcaption>
+                        <strong>
+                            Photo by: Missy S
+                        </strong>
+                        This is my office place to work with my team.
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="img-item">
+                <h3 class="hidden">ipad</h3>
+                <figure>
+                    <a href="img/ipad-large.jpg" rel="lightbox" title="Photo by: Daniel Parks">
+                        <span class="thumb-screen"></span>
+                        <img src="img/ipad-small.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/"/>
+                    </a>
+                    <figcaption>
+                        <strong>
+                            Photo by: Daniel Parks
+                        </strong>
+                        Done my website design to work with ipad.
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="img-item">
+                <h3 class="hidden">web</h3>
+                <figure>
+                    <a href="img/web-large.jpg" rel="lightbox" title="Photo by: Mike Ranweiler">
+                        <span class="thumb-screen"></span>
+                        <img src="img/web-small.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/"/>
+                    </a>
+                    <figcaption>
+                        <strong>
+                            Photo by: Mike Ranweiler
+                        </strong>
+                        Done the website resize work for web optimization.
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="img-item">
+                <h3 class="hidden">workstation</h3>
+                <figure>
+                    <a href="img/workstation.jpg" rel="lightbox" title="Photo by: Stuart SeegerLink">
+                        <span class="thumb-screen"></span>
+                        <img src="img/workstation-small.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/"/>
+                    </a>
+                    <figcaption>
+                        <strong>
+                            Photo by: Stuart Seeger
+                        </strong>
+                        Workstation is the place the awesome things come in mind.
+                    </figcaption>
+                </figure>
+            </article>
+            <br class="clear"/>
+</section>
+
 </body>
 </html>
